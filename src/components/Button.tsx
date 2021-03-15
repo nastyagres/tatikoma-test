@@ -4,12 +4,13 @@ import cn from 'classnames';
 import classes from './Button.module.css';
 
 interface ButtonProps {
-    className: string;
-    onClick: () => void;
+    className?: string;
+    onClick?: (param: any) => void;
+    children?: any;
 }
 
 const Button: FC<ButtonProps> = ({ className, children, ...rest }) => {
-    return <button className={cn(classes.root, className)} {...rest}>{children}</button>
+    return <div className={cn(classes.root, className)} {...rest}>{children}</div>
 };
 
 export default memo(Button)
